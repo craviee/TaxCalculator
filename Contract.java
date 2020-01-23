@@ -1,4 +1,8 @@
-class with
+package com.bartoszwalter.students.taxes;
+class Contract {
+
+}
+with
 
 double RawIncome, Income
 and other variables that can be saved internally after calculations
