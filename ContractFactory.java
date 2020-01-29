@@ -9,7 +9,7 @@ public class ContractFactory {
         Map<String, String> contractMap = new HashMap<String, String>();
         contractMap.put("O", new OrdinaryContract(income));
         contractMap.put("C", new CivilContract(income));
-        return contractMap.ContractType
+        return contractMap.get(ContractType);
         */
         switch(ContractType){
             case "O":
