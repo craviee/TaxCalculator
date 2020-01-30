@@ -1,9 +1,8 @@
-// package com.bartoszwalter.students.taxes;
-
+package com.bartoszwalter.students.taxes;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.DecimalFormat;
-
+public class TaxCalculator {
 public static void main(String[] args)
 {		
 	ContractFactory factory = new ContractFactory();
@@ -21,10 +20,10 @@ public static void main(String[] args)
 		System.out.println("Unknown type of contract!");
 	}
 }
+}
 
 
-
-package com.bartoszwalter.students.taxes;
+//package com.bartoszwalter.students.taxes;
 
 // import java.io.BufferedReader;
 // import java.io.InputStreamReader;
