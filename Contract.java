@@ -1,5 +1,6 @@
- 
-package com.bartoszwalter.students.taxes;
+import java.util.Map;
+import java.util.HashMap;
+
 class Contract {
     double rawIncome;
     double IncomeAfterTax;
@@ -23,7 +24,7 @@ class Contract {
     Map<String, Double> insuranceMap = new HashMap<String, Double>();
     insuranceMap.put("HealthAssurance9", IncomeAfterTax*percent9HealthInsurance);
     insuranceMap.put("HealthAssurance775", IncomeAfterTax*percent775HealthInsurance);
-    insuranceMap.put("IncomeAfterInsurance", IncomeAfterTax-taxMap.get("HealthAssurance9")-taxMap.get("HealthAssurance775"));
+    insuranceMap.put("IncomeAfterInsurance", IncomeAfterTax-insuranceMap.get("HealthAssurance9")-insuranceMap.get("HealthAssurance775"));
     return insuranceMap;
  }
 }

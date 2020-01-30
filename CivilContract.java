@@ -1,2 +1,6 @@
-Subclass of Contract receiving RawIncome as parameter
-also implementation if needed of the methods on Contract class
+class CivilContract extends Contract
+{
+    CivilContract(double i){
+        super(i);
+    }
+}
