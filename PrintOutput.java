@@ -14,13 +14,14 @@ public class PrintOutput extends Output
         try
         {
             DecimalFormat currencyFormat = new DecimalFormat("#.00");
+
             System.out.println(contract.name + " contract");
             System.out.println("===============================");
             System.out.println("Income: " + contract.income);
             System.out.println("Pension Tax: " + currencyFormat.format(contract.pension));
             System.out.println("Disability Tax: " + currencyFormat.format(contract.disability));
             System.out.println("Illness Tax: " + currencyFormat.format(contract.illness));
-            System.out.println("Heatlh Tax: " + currencyFormat.format(contract.incomeAfterTax));
+            System.out.println("Health Tax: " + contract.incomeAfterTax);
             System.out.println("Health Insurance:\n"
                 + "\t" + contract.percentFirstHealthTax + "%: " + currencyFormat.format(contract.firstHealthAssurance)
                 + "\t" + contract.percentSecondHealthTax + "%: " + currencyFormat.format(contract.secondHealthAssurance));
