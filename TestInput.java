@@ -5,10 +5,10 @@ public class TestInput extends Input
 
     public TestInput(String contractType, double income)
     {
-        // super();
+        super();
         
-        // contractType = this.contractType;
-        // income = this.income;
+        contractType = this.contractType;
+        income = this.income;
     }
 
     public double getIncome() { return income; }

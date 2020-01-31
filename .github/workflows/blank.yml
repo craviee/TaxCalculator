@@ -13,4 +13,4 @@ jobs:
     - name: Compilation
       run: javac -Xlint:unchecked *.java
     - name: Run
-      run: TaxCalculator
+      run: java TaxCalculator

@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class TestOutput extends Output
 {
     public TestOutput()
@@ -9,12 +11,12 @@ public class TestOutput extends Output
     {
         try
         {
-            // DecimalFormat currencyFormat = new DecimalFormat("#.00");
+            DecimalFormat currencyFormat = new DecimalFormat("#.00");
 
-            // System.out.println("@@@@@@@@@@@@@@ TEST OUPUT @@@@@@@@@@@@@@@@@");
-            // System.out.println(contract.name + " contract");
-            // System.out.println("Testing format: " + currencyFormat.format(contract.salary));
-            // System.out.println("@@@@@@@@@@@@@@ TEST OUPUT @@@@@@@@@@@@@@@@@");
+            System.out.println("@@@@@@@@@@@@@@ TEST OUPUT @@@@@@@@@@@@@@@@@");
+            System.out.println(contract.name + " contract");
+            System.out.println("Testing format: " + currencyFormat.format(contract.income));
+            System.out.println("@@@@@@@@@@@@@@ TEST OUPUT @@@@@@@@@@@@@@@@@");
 
             return 0;
         }
