@@ -11,6 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Compilation
-      run: javac -Xlint:unchecked *.java
+      run: javac -Xlint:unchecked src/*.java
     - name: Run
       run: java TaxCalculator
