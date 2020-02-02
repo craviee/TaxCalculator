@@ -8,14 +8,14 @@ class EmploymentContract extends Contract {
         pension = calculatePension(i);
         disability = calculateDisability(i);
         illness = calculateIllness(i);
-        incomeAfterTax = calculateIncomeAfterTaxes(income);//oBasis, cBasis
+        incomeAfterTax = calculateIncomeAfterTaxes(income);
         firstHealthAssurance = calculateFirstHealthAssurance(incomeAfterTax);
         secondHealthAssurance = calculateSecondHealthAssurance(incomeAfterTax);
         incomeAfterInsurance = calculateIncomeAfterInsurance(incomeAfterTax);
-        taxBasis = incomeAfterTax - incomeTax;//basisTax
+        taxBasis = incomeAfterTax - incomeTax;
         advanceTax = taxBasis * percentAdvanceTax;
         advanceTaxOffice = advanceTax - secondHealthAssurance - exemptedValue;
-        salary = income - ((pension + disability + illness) + firstHealthAssurance + advanceTaxOffice);//healthTaxType1 + advanceTaxOfficeRounded);
+        salary = income - ((pension + disability + illness) + firstHealthAssurance + advanceTaxOffice);
         advancedIncomeTax = ((incomeAfterTax - incomeTax) * advancedIncomeTaxPercentage) / 100;
     }
 }
