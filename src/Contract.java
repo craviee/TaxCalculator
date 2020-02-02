@@ -1,36 +1,51 @@
-import java.util.Map;
-import java.util.HashMap;
-
 class Contract {
-    double income;
-    double incomeTax = 111.25;
-    double percentPensionTax = 9.76 / 100;
-    double percentDisableTax = 1.5 / 100;
-    double percentIllnessTax = 2.45 / 100;
+    Contract() {
+    }
+
+    protected String name;
+    protected double income;
+    double incomeTax;
+    private double percentPensionTax = 9.76 / 100;
+    private double percentDisableTax = 1.5 / 100;
+    private double percentIllnessTax = 2.45 / 100;
     double percentAdvanceTax = 18.0 / 100;
     double percentFirstHealthTax = 9;
     double percentSecondHealthTax = 7.75;
     double advancedIncomeTaxPercentage = 18;
-    double exemptedValue = 46.33;
-    double advancedIncomeTax = 0;
+    double exemptedValue;
+    double advancedIncomeTax;
     double pension, disability, illness;
     double incomeAfterTax, firstHealthAssurance;
     double secondHealthAssurance, incomeAfterInsurance, taxBasis;
     double advanceTaxOffice, salary;
-    String name;
+    double advanceTax = 0;
 
-    public Contract(double _income) {
-        income = _income;
-        pension = income * percentPensionTax;
-        disability = income * percentDisableTax;
-        illness = income * percentIllnessTax;
-        incomeAfterTax = income - pension - disability - illness;
-        firstHealthAssurance = incomeAfterTax * percentFirstHealthTax / 100;
-        secondHealthAssurance = incomeAfterTax * percentSecondHealthTax / 100;
-        incomeAfterInsurance = incomeAfterTax - firstHealthAssurance - secondHealthAssurance;
-        taxBasis = incomeAfterTax - incomeTax;
-        advanceTaxOffice = percentAdvanceTax - secondHealthAssurance - exemptedValue;
-        salary = income - (pension + disability + illness + percentFirstHealthTax/100 + advanceTaxOffice);
-        advancedIncomeTax = ((incomeAfterTax - incomeTax) * advancedIncomeTaxPercentage) / 100;
+    double calculateIncomeAfterInsurance(double incomeAfterTax) {
+        return incomeAfterTax - firstHealthAssurance - secondHealthAssurance;
+    }
+
+    double calculateFirstHealthAssurance(double incomeAfterTax) {
+        return incomeAfterTax * percentFirstHealthTax / 100;
+    }
+
+    double calculateSecondHealthAssurance(double incomeAfterTax) {
+        return incomeAfterTax * percentSecondHealthTax / 100;
+    }
+
+    double calculateIllness(double income) {
+        return income * percentIllnessTax;
+    }
+
+    double calculatePension(double income) {
+        return income * percentPensionTax;
+    }
+
+    double calculateDisability(double income) {
+        return income * percentDisableTax;
+    }
+
+    double calculateIncomeAfterTaxes(double income) {
+        return income - pension - disability - illness;
     }
 }
+
