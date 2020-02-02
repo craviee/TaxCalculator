@@ -1,11 +1,8 @@
 abstract class Contract {
 
-    protected String name;
+    String name;
     protected double income;
     double incomeTax;
-    private double percentPensionTax = 9.76 / 100;
-    private double percentDisableTax = 1.5 / 100;
-    private double percentIllnessTax = 2.45 / 100;
     double percentAdvanceTax = 18.0 / 100;
     double percentFirstHealthTax = 9;
     double percentSecondHealthTax = 7.75;
@@ -31,14 +28,17 @@ abstract class Contract {
     }
 
     double calculateIllness(double income) {
+        double percentIllnessTax = 2.45 / 100;
         return income * percentIllnessTax;
     }
 
     double calculatePension(double income) {
+        double percentPensionTax = 9.76 / 100;
         return income * percentPensionTax;
     }
 
     double calculateDisability(double income) {
+        double percentDisableTax = 1.5 / 100;
         return income * percentDisableTax;
     }
 
