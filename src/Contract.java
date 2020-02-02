@@ -1,6 +1,4 @@
-class Contract {
-    Contract() {
-    }
+abstract class Contract {
 
     protected String name;
     protected double income;
